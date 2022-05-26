@@ -9,6 +9,7 @@ import gcmq from 'gulp-group-css-media-queries';
 import autoprefixer from 'gulp-autoprefixer';
 import cleanCSS from 'gulp-clean-css';
 import sourcemaps from 'gulp-sourcemaps';
+import webp from 'gulp-webp';
 import imagemin from 'gulp-imagemin';
 import imageminOptipng from 'imagemin-optipng';
 import imageminGifsicle from 'imagemin-gifsicle';
@@ -19,7 +20,6 @@ import webpack from 'webpack-stream';
 import webpackConfig from './webpack.prod.js';
 import ttf2woff2 from 'gulp-ttf2woff2';
 import del from 'del';
-import webp from 'gulp-webp';
 import gulpif from 'gulp-if';
 import { htmlValidator } from 'gulp-w3c-html-validator';
 import replace from 'gulp-replace';
@@ -120,7 +120,11 @@ export const imagesToWebp = () => {
   return gulp
     .src(path.src.imagesToWebp)
     .pipe(newer(path.build.images))
-    .pipe(webp())
+    .pipe(
+      webp({
+        quality: 80
+      })
+    )
     .pipe(gulp.dest(path.build.images));
 };
 
