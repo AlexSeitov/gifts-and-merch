@@ -2,7 +2,11 @@
   <div class="container">
     <div class="production__row">
       <div class="production__img-wrapper">
-        <img src="images/production/production.jpg" width="753" height="532" alt="продукция">
+        <!-- <img src="images/production/production.jpg" width="753" height="532" alt="продукция"> -->
+        <picture>
+          <source srcset="images/production/production.jpg" media="(min-width: 568px)">
+          <img src="images/production/production-sm.jpg" width="900" height="636" alt="продукция">
+        </picture>
       </div>
 
       <div class="production__content-col">
@@ -11,16 +15,28 @@
         <div class="production__slider swiper">
           <div class="swiper-wrapper">
             <a href="#" class="production__slider-item swiper-slide">
-              <img src="images/production/production-item-1.jpg" width="188" height="190" alt="продукт">
+              <picture>
+                <source srcset="images/production/production-item-1.jpg" media="(min-width: 568px)">
+                <img src="images/production/production-item-sm-1.jpg" width="122" height="122" alt="продукт">
+              </picture>
             </a>
             <a href="#" class="production__slider-item swiper-slide">
-              <img src="images/production/production-item-2.jpg" width="188" height="190" alt="продукт">
+              <picture>
+                <source srcset="images/production/production-item-2.jpg" media="(min-width: 568px)">
+                <img src="images/production/production-item-sm-2.jpg" width="122" height="122" alt="продукт">
+              </picture>
             </a>
             <a href="#" class="production__slider-item swiper-slide">
-              <img src="images/production/production-item-3.jpg" width="188" height="190" alt="продукт">
+              <picture>
+                <source srcset="images/production/production-item-3.jpg" media="(min-width: 568px)">
+                <img src="images/production/production-item-sm-3.jpg" width="122" height="122" alt="продукт">
+              </picture>
             </a>
             <a href="#" class="production__slider-item swiper-slide">
-              <img src="images/production/production-item-4.jpg" width="188" height="190" alt="продукт">
+              <picture>
+                <source srcset="images/production/production-item-4.jpg" media="(min-width: 568px)">
+                <img src="images/production/production-item-sm-4.jpg" width="122" height="122" alt="продукт">
+              </picture>
             </a>
           </div>
 
