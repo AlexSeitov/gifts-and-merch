@@ -31,6 +31,10 @@
     max-width: rem(200);
     font-size: 0;
 
+    @media (min-width: rem(360)) {
+      max-width: rem(230);
+    }
+
     .logo {
       transition: fill $transition;
       fill: $white;

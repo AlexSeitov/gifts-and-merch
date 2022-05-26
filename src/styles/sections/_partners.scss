@@ -21,10 +21,10 @@
   &__row {
     display: flex;
     flex-wrap: wrap;
-    gap: rem(20);
+    gap: rem(30);
     justify-content: center;
 
-    @media (min-width: $md) {
+    @media (min-width: $lg) {
       justify-content: space-between;
     }
   }
@@ -32,10 +32,23 @@
   // .partners__item
 
   &__item {
-    max-width: 20%;
+    display: flex;
+    align-items: center;
+    width: rem(120);
+    height: rem(64);
 
     @media (min-width: $md) {
-      max-width: 10%;
+      width: rem(140);
+      height: rem(54);
+    }
+
+    @media (min-width: $md) {
+      width: rem(160);
+      height: rem(74);
+    }
+
+    img {
+      font-size: 0;
     }
   }
 }

@@ -1,13 +1,8 @@
 .main-section {
   position: relative;
-  margin-bottom: rem(60);
   padding-top: rem(40);
   overflow: hidden;
   background: linear-gradient(40deg, $primaryColor 0%, $secondaryColor 100%);
-
-  @media (min-width: $sm) {
-    margin-bottom: 0;
-  }
 
   @media (min-width: $md) {
     padding-top: rem(80);
@@ -76,16 +71,17 @@
   }
 
   &__img-wrapper {
+    width: 100%;
     max-width: rem(200);
     margin-bottom: rem(-120);
     margin-inline: auto;
 
     @media (min-width: rem(480)) {
-      margin-inline: 0;
       position: absolute;
       top: 15%;
       right: rem(-100);
       max-width: 60%;
+      margin-inline: 0;
     }
 
     @media (min-width: $sm) {
