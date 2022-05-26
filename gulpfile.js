@@ -11,6 +11,7 @@ import cleanCSS from 'gulp-clean-css';
 import sourcemaps from 'gulp-sourcemaps';
 import webp from 'gulp-webp';
 import imagemin from 'gulp-imagemin';
+import imageminWebp from 'imagemin-webp';
 import imageminOptipng from 'imagemin-optipng';
 import imageminGifsicle from 'imagemin-gifsicle';
 import newer from 'gulp-newer';
@@ -117,15 +118,22 @@ export const gifs = () => {
 };
 
 export const imagesToWebp = () => {
-  return gulp
-    .src(path.src.imagesToWebp)
-    .pipe(newer(path.build.images))
-    .pipe(
-      webp({
-        quality: 80
-      })
-    )
-    .pipe(gulp.dest(path.build.images));
+  return (
+    gulp
+      .src(path.src.imagesToWebp)
+      .pipe(newer(path.build.images))
+      .pipe(
+        imagemin({
+          plugins: [imageminWebp({ quality: 70 })]
+        })
+      )
+      // .pipe(
+      //   webp({
+      //     quality: 80
+      //   })
+      // )
+      .pipe(gulp.dest(path.build.images))
+  );
 };
 
 export const imagesPng = () => {
