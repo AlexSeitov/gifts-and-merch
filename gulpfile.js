@@ -118,22 +118,15 @@ export const gifs = () => {
 };
 
 export const imagesToWebp = () => {
-  return (
-    gulp
-      .src(path.src.imagesToWebp)
-      .pipe(newer(path.build.images))
-      .pipe(
-        imagemin({
-          plugins: [imageminWebp({ quality: 70 })]
-        })
-      )
-      // .pipe(
-      //   webp({
-      //     quality: 80
-      //   })
-      // )
-      .pipe(gulp.dest(path.build.images))
-  );
+  return gulp
+    .src(path.src.imagesToWebp)
+    .pipe(newer(path.build.images))
+    .pipe(
+      imagemin({
+        plugins: [imageminWebp({ quality: 70 })]
+      })
+    )
+    .pipe(gulp.dest(path.build.images));
 };
 
 export const imagesPng = () => {
@@ -142,7 +135,11 @@ export const imagesPng = () => {
     .pipe(newer(path.build.images))
     .pipe(
       imagemin({
-        plugins: [imageminOptipng()]
+        plugins: [
+          imageminOptipng({
+            optimizationLevel: 4
+          })
+        ]
       })
     )
     .pipe(gulp.dest(path.build.images));
