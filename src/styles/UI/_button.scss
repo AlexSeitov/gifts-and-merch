@@ -1,0 +1,33 @@
+.btn {
+  display: inline-block;
+  padding: rem(20) rem(60);
+  color: $white;
+  font-size: rem(16);
+  line-height: lh(18.4);
+  white-space: nowrap;
+  text-align: center;
+  border: none;
+  border-radius: rem(50);
+  cursor: pointer;
+  transition: all $transition;
+
+  &-primary {
+    background-color: $btnPrimaryColor;
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: $btnPrimaryColorHover;
+      }
+    }
+  }
+
+  &-secondary {
+    background-color: $btnSecondaryColor;
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: $btnSecondaryColorHover;
+      }
+    }
+  }
+}

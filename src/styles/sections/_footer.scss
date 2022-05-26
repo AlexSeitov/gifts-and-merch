@@ -1,0 +1,150 @@
+.footer {
+  padding-bottom: rem(30);
+
+  // .footer__row
+
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(30);
+    justify-content: space-between;
+    margin-bottom: rem(50);
+  }
+
+  // .footer__logo
+
+  &__logo {
+    font-size: 0;
+
+    svg {
+      fill: $black;
+    }
+
+    @media (min-width: $lg) {
+      max-width: rem(350);
+    }
+
+    a {
+      display: inline-block;
+      margin-bottom: rem(20);
+    }
+  }
+
+  &__text {
+    max-width: rem(400);
+  }
+
+  // .footer__nav
+
+  &__nav {
+    .nav__list {
+      text-decoration: underline;
+    }
+
+    .nav__item {
+      margin-bottom: rem(15);
+    }
+
+    .nav__link {
+      @media (hover: hover) {
+        &:hover {
+          font-weight: 700;
+        }
+      }
+    }
+
+    @media (min-width: $sm) {
+      width: 40%;
+    }
+
+    @media (min-width: $md) {
+      width: 50%;
+    }
+
+    @media (min-width: $lg) {
+      width: initial;
+    }
+  }
+
+  // .footer__contact
+
+  &__contact {
+    @media (min-width: $sm) {
+      width: calc(60% - rem(30));
+    }
+
+    @media (min-width: $md) {
+      width: calc(50% - rem(30));
+    }
+
+    @media (min-width: $lg) {
+      width: initial;
+    }
+  }
+
+  // .footer__contact-title
+
+  &__contact-title {
+    margin-bottom: rem(15);
+    font-size: rem(20);
+    font-family: $secondaryFontFamily;
+  }
+
+  // .footer__contact-text
+
+  &__contact-text {
+    max-width: rem(400);
+    margin-bottom: rem(30);
+  }
+
+  // .footer__form
+
+  &__form {
+    position: relative;
+    max-width: rem(300);
+  }
+
+  // .footer__form-input
+
+  &__form-input {
+    width: 100%;
+    padding: rem(16);
+    border: 1px solid $inputBorderColor;
+    border-radius: $radius;
+    outline: none;
+  }
+
+  // .footer__form-btn
+
+  &__form-btn {
+    position: absolute;
+    top: rem(8);
+    right: rem(8);
+    width: rem(34);
+    height: rem(34);
+    color: $white;
+    background-color: $primaryColor;
+    border: none;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+    transition: transform $transition;
+
+    @media (hover: hover) {
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    svg {
+      stroke: $white;
+    }
+  }
+
+  // .footer__copyright
+
+  &__copyright {
+    color: $gray;
+    text-align: center;
+  }
+}

@@ -1,0 +1,154 @@
+.creative {
+  padding-bottom: rem(120);
+  overflow: hidden;
+
+  @media (min-width: $sm) {
+    padding-bottom: 0;
+  }
+
+  .container {
+    position: relative;
+  }
+
+  // .creative__title-img
+
+  &__title-img {
+    max-width: rem(156);
+    margin-bottom: rem(30);
+    margin-inline: auto;
+
+    @media (min-width: $sm) {
+      max-width: rem(302);
+      margin-inline: 0;
+    }
+  }
+
+  // .creative__title
+
+  &__title {
+    @media (min-width: $sm) {
+      max-width: 70%;
+      text-align: left;
+    }
+
+    @media (min-width: $md) {
+      max-width: 60%;
+    }
+  }
+
+  // .creative__text
+
+  &__text {
+    max-width: rem(300);
+    margin-bottom: rem(60);
+
+    @media (min-width: $md) {
+      max-width: rem(400);
+      margin-bottom: rem(100);
+    }
+  }
+
+  // .creative__btns-wrapper
+
+  &__btns-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: rem(28);
+    align-items: center;
+
+    @media (min-width: $sm) {
+      flex-direction: row;
+      align-items: start;
+      justify-content: center;
+    }
+
+    @media (min-width: $md) {
+      justify-content: start;
+    }
+
+    .btn {
+      width: 100%;
+      max-width: rem(280);
+    }
+  }
+
+  // .creative__img-col
+
+  &__img-col {
+    position: relative;
+    bottom: rem(-70);
+    max-width: rem(300);
+    padding: rem(10);
+    border-radius: $radius;
+    transform: rotate(15deg);
+    margin-inline: auto;
+
+    &::before {
+      position: absolute;
+      bottom: rem(10);
+      left: rem(-30);
+      z-index: -1;
+      display: block;
+      width: rem(200);
+      height: rem(200);
+      background-color: $tertiaryColor;
+      border-radius: $radius;
+      transform: rotate(-45deg);
+      opacity: 0.4;
+      content: '';
+
+      @media (min-width: $sm) {
+        left: 0;
+        width: rem(150);
+        height: rem(150);
+      }
+
+      @media (min-width: $md) {
+        left: rem(-30);
+        width: rem(200);
+        height: rem(200);
+      }
+
+      @media (min-width: $lg) {
+        bottom: rem(-30);
+        left: rem(-60);
+        width: rem(280);
+        height: rem(280);
+      }
+    }
+
+    &::after {
+      position: absolute;
+      z-index: -1;
+      display: block;
+      background-color: $primaryColor;
+      border-radius: $radius;
+      content: '';
+      inset: 0;
+    }
+
+    @media (min-width: $sm) {
+      position: absolute;
+      top: rem(10);
+      right: rem(-40);
+      bottom: initial;
+      max-width: rem(200);
+    }
+
+    @media (min-width: $md) {
+      right: initial;
+      left: 70vw;
+      width: 100%;
+      max-width: rem(270);
+    }
+
+    @media (min-width: $lg) {
+      max-width: rem(400);
+    }
+
+    @media (min-width: $xl) {
+      right: rem(54);
+      left: initial;
+    }
+  }
+}

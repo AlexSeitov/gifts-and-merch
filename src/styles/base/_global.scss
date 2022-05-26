@@ -1,0 +1,100 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-x: hidden;
+  color: $black;
+  font-weight: $fontWeight;
+  font-size: $fontSize;
+  font-family: $fontFamily;
+  line-height: $lineHeight;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.container {
+  max-width: rem($containerWidth);
+  margin-inline: auto;
+  padding-inline: rem(15);
+}
+
+.section {
+  padding: rem(70) 0 0;
+
+  @media (min-width: $lg) {
+    padding: rem(120) 0 0;
+  }
+}
+
+.disable-scroll {
+  position: relative;
+  overflow: hidden;
+
+  @media (max-width: rem(1023.98)) {
+    &::after {
+      position: absolute;
+      top: 0;
+      z-index: 1;
+      width: 100%;
+      height: 100vh;
+      background-color: rgba(#000, 60%);
+      content: '';
+    }
+  }
+}
+
+svg {
+  display: block;
+  width: 100%;
+}
+
+.user-icon {
+  width: rem(18);
+  margin-inline: auto;
+  cursor: pointer;
+  fill: $white;
+}
+
+.search__icon {
+  width: rem(15);
+  fill: $white;
+
+  @media (min-width: $md) {
+    width: rem(18);
+  }
+}
+
+.social-icon {
+  width: rem(40);
+  height: rem(40);
+  transition: transform $transition;
+  fill: $primaryColor;
+
+  @media (hover: hover) {
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.social-login {
+  padding: rem(30) 0 rem(10);
+  font-size: rem(18);
+  text-align: left;
+}

@@ -1,0 +1,25 @@
+@use 'sass:math';
+@use 'sass:color';
+@import 'vendor/normalize';
+@import 'base/functions';
+@import 'base/variables';
+@import 'mixins/font-face';
+@import 'base/fonts';
+@import 'base/global';
+@import 'UI/headings';
+@import 'UI/button';
+@import 'UI/burger';
+@import 'UI/nav';
+@import 'UI/slider';
+@import 'UI/popup';
+@import 'UI/tabs';
+
+// sections
+@import 'sections/header';
+@import 'sections/main-section';
+@import 'sections/popular';
+@import 'sections/creative';
+@import 'sections/production';
+@import 'sections/order';
+@import 'sections/partners';
+@import 'sections/footer';

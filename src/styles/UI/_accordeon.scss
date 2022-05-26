@@ -1,0 +1,37 @@
+.accordion {
+  &__item {
+    position: relative;
+  }
+
+  &__head {
+    display: flex;
+    align-items: center;
+    width: 92%;
+    cursor: pointer;
+    transition: all $transition ease-out;
+
+    &::after {
+      position: absolute;
+      right: rem(20);
+      display: inline-block;
+      padding: rem(6);
+      border: solid $black;
+      border-width: 0 rem(2) rem(2) 0;
+      transform: rotate(45deg);
+      transition: transform $transition;
+      content: '';
+    }
+  }
+
+  &__head.active {
+    &::after {
+      transform: rotate(226deg);
+    }
+  }
+
+  &__text {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height $transition ease-out;
+  }
+}

@@ -1,0 +1,41 @@
+.partners {
+  margin-top: rem(-50);
+
+  @media (min-width: $sm) {
+    position: relative;
+    z-index: 3;
+    margin-top: rem(-90);
+  }
+
+  @media (min-width: $lg) {
+    margin-top: rem(-130);
+  }
+
+  &__title {
+    margin-bottom: rem(50);
+    text-align: center;
+  }
+
+  // .partners__row
+
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(20);
+    justify-content: center;
+
+    @media (min-width: $md) {
+      justify-content: space-between;
+    }
+  }
+
+  // .partners__item
+
+  &__item {
+    max-width: 20%;
+
+    @media (min-width: $md) {
+      max-width: 10%;
+    }
+  }
+}

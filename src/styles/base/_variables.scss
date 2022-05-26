@@ -1,0 +1,62 @@
+// Fonts, text
+$fontFamily: 'Nunito Sans', sans-serif;
+$secondaryFontFamily: 'Ubuntu', sans-serif;
+$fontSize: rem(16);
+$fontWeight: 400;
+$lineHeight: 1.4;
+
+// Colors
+$primaryColor: #4b83b4;
+$secondaryColor: #d19eeb;
+$tertiaryColor: #3f80ec;
+$bgColor: #b9cdee;
+$black: #201f1f;
+$white: #fff;
+$gray: #757575;
+$blackGray: #606060;
+$lightGray: #e9e9e9;
+$bgColor: #f1f1f8;
+$inputBorderColor: #999;
+
+// Button colors
+$btnPrimaryColor: #443a7b;
+$btnPrimaryColorHover: color.adjust($btnPrimaryColor, $blackness: 15%);
+$btnSecondaryColor: #335c81;
+$btnSecondaryColorHover: color.adjust($btnSecondaryColor, $blackness: 15%);
+
+// Others
+$radius: rem(10);
+$shadow: 0 0 rem(12) 0 rgba(230, 235, 245, 50%);
+$transition: 0.3s;
+
+// Sizes
+$minWidth: 320;
+$maxWidth: 1920;
+$maxWidthContainer: 1600; // container size
+$containerPadding: 30;
+
+// Container width
+$containerWidth: $maxWidthContainer + $containerPadding;
+
+// Breakpoints
+$sm: rem(568);
+$md: rem(768);
+$lg: rem(1024);
+$xl: rem(1366);
+$xxl: rem(1600);
+
+// $fhd: rem(1920);
+
+// Columns
+// $col-1: calc(100% / 12 * 1);
+// $col-2: calc(100% / 12 * 2);
+// $col-3: calc(100% / 12 * 3);
+// $col-4: calc(100% / 12 * 4);
+// $col-5: calc(100% / 12 * 5);
+// $col-6: 50%;
+// $col-7: calc(100% / 12 * 7);
+// $col-8: calc(100% / 12 * 8);
+// $col-9: calc(100% / 12 * 9);
+// $col-10: calc(100% / 12 * 10);
+// $col-11: calc(100% / 12 * 11);
+// $col-12: 100%;
