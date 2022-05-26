@@ -4,7 +4,7 @@ export default {
   mode: 'production',
   devtool: 'cheap-source-map',
   optimization: {
-    minimize: false,
+    minimize: true,
     usedExports: true,
     minimizer: [
       new TerserPlugin({
