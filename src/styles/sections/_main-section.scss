@@ -4,7 +4,6 @@
   padding-top: rem(40);
   overflow: hidden;
   background: linear-gradient(40deg, $primaryColor 0%, $secondaryColor 100%);
-  // background-color: $primaryColor;
 
   @media (min-width: $sm) {
     margin-bottom: 0;
