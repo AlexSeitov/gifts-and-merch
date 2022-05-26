@@ -1,0 +1,15 @@
+node_modules/
+dist/
+build/
+./tmp
+*.txt
+*.cab
+*.msi
+*.msm
+*.msp
+*.swp
+*.swo
+Desktop.ini
+Thumbs.db
+ehthumbs.db
+.*DS_Store

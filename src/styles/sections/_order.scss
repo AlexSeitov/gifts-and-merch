@@ -1,0 +1,157 @@
+.order {
+  position: relative;
+  color: $white;
+  background: linear-gradient(40deg, $primaryColor 0%, $secondaryColor 100%);
+
+  &__row {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  // .order__title
+
+  &__title {
+    max-width: rem(480);
+
+    @media (min-width: $lg) {
+      max-width: 50%;
+    }
+  }
+
+  // .order__text
+
+  &__text {
+    margin-bottom: rem(50);
+
+    @media (min-width: $sm) {
+      max-width: rem(384);
+    }
+
+    @media (min-width: $md) {
+      max-width: rem(400);
+      margin-bottom: rem(100);
+    }
+  }
+
+  &__img-wrapper {
+    max-width: rem(240);
+    margin-bottom: rem(50);
+    margin-inline: auto;
+
+    @media (min-width: $sm) {
+      position: absolute;
+      top: rem(50);
+      right: 0;
+      max-width: 28vw;
+    }
+
+    @media (min-width: $md) {
+      top: 0;
+      left: 60vw;
+      max-width: rem(240);
+    }
+
+    @media (min-width: $lg) {
+      max-width: rem(350);
+    }
+
+    @media (min-width: $xl) {
+      right: rem(150);
+      left: initial;
+    }
+
+    svg {
+      fill: $white;
+    }
+  }
+
+  // .order__form-col
+
+  &__form-col {
+    @media (min-width: $md) {
+      display: flex;
+      column-gap: rem(40);
+    }
+
+    @media (min-width: $lg) {
+      flex-direction: column;
+    }
+  }
+
+  // .order__form-title
+
+  &__form-title {
+    max-width: rem(400);
+    margin-bottom: rem(30);
+    font-weight: 700;
+    font-size: rem(18);
+    font-family: $secondaryFontFamily;
+
+    span {
+      color: $secondaryColor;
+    }
+  }
+
+  &__bg {
+    position: relative;
+    fill: $white;
+  }
+
+  &__bg_top {
+    top: rem(-1);
+    padding-bottom: rem(40);
+
+    @media (min-width: $lg) {
+      padding-bottom: rem(70);
+    }
+  }
+
+  &__bg_bottom {
+    top: rem(1);
+    padding-top: rem(40);
+
+    @media (min-width: $lg) {
+      padding-top: rem(70);
+    }
+  }
+}
+
+.form-order {
+  @media (min-width: $md) {
+    max-width: rem(362);
+  }
+
+  @media (min-width: $lg) {
+    display: flex;
+    width: 100%;
+    max-width: initial;
+    column-gap: rem(50);
+  }
+
+  // .form-order__input
+
+  &__input {
+    width: 100%;
+    margin-bottom: rem(30);
+    padding: rem(10);
+    color: $white;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid $white;
+    outline: none;
+
+    &::placeholder {
+      color: $white;
+    }
+  }
+
+  .btn {
+    width: 100%;
+    margin-top: rem(20);
+
+    @media (min-width: $sm) {
+      width: initial;
+    }
+  }
+}

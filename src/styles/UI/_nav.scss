@@ -1,0 +1,26 @@
+.nav {
+  &__link {
+    transition: all $transition;
+  }
+
+  &__btn-call {
+    margin-top: rem(60);
+
+    @media (min-width: $lg) {
+      display: none;
+    }
+
+    .btn {
+      width: 100%;
+      font-size: rem(18);
+
+      @media (min-width: $sm) {
+        width: initial;
+      }
+    }
+  }
+
+  &_active {
+    color: $black;
+  }
+}

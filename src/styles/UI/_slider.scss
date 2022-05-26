@@ -1,0 +1,94 @@
+// .swiper {
+//   overflow: hidden;
+// }
+
+// .swiper-wrapper {
+//   display: flex;
+// }
+
+// .swiper-slide {
+//   flex-shrink: 0;
+//   text-align: center;
+//   background-color: #ccc;
+//   cursor: grabbing;
+// }
+
+// container for navigation
+.swiper-btns {
+  display: flex;
+  justify-content: center;
+  margin-top: rem(30);
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  width: rem(16);
+  height: rem(16);
+  cursor: pointer;
+
+  &::after {
+    display: inline-block;
+    padding: rem(6);
+    border: solid $black;
+    border-width: 0 rem(2) rem(2) 0;
+    transition: transform $transition;
+    content: '';
+  }
+}
+
+.swiper-button-prev {
+  margin-right: rem(18);
+
+  &::after {
+    transform: rotate(135deg);
+  }
+
+  @media (hover: hover) {
+    &:hover::after {
+      transform: rotate(135deg) scale(1.4);
+    }
+  }
+}
+
+.swiper-button-next {
+  margin-left: rem(18);
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+
+  @media (hover: hover) {
+    &:hover::after {
+      transform: rotate(-45deg) scale(1.4);
+    }
+  }
+}
+
+.swiper-pagination {
+  text-align: center;
+}
+
+.swiper-pagination-bullet {
+  display: inline-block;
+  width: rem(15);
+  height: rem(15);
+  border: rem(2) solid $black;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform $transition;
+
+  @media (hover: hover) {
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &:not(:last-child) {
+    margin-right: rem(15);
+  }
+}
+
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background: #9e9d9d;
+  opacity: 1;
+}

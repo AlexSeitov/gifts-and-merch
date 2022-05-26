@@ -1,0 +1,5 @@
+.tabs button[aria-selected='true'] {
+  &::after {
+    opacity: 1;
+  }
+}
