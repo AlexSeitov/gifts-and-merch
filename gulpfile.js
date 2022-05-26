@@ -137,7 +137,7 @@ export const imagesPng = () => {
       imagemin({
         plugins: [
           imageminOptipng({
-            optimizationLevel: 4
+            optimizationLevel: 5
           })
         ]
       })
