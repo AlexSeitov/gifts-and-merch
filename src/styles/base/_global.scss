@@ -84,7 +84,7 @@ svg {
   width: rem(40);
   height: rem(40);
   transition: transform $transition;
-  fill: $primaryColor;
+  fill: $btnSecondaryColor;
 
   @media (hover: hover) {
     &:hover {
