@@ -134,13 +134,7 @@ export const imagesPng = () => {
     .src(path.src.imagesPng)
     .pipe(newer(path.build.images))
     .pipe(
-      imagemin({
-        plugins: [
-          imageminOptipng({
-            optimizationLevel: 5
-          })
-        ]
-      })
+      imagemin([imageminOptipng({ optimizationLevel: 5 })])
     )
     .pipe(gulp.dest(path.build.images));
 };
