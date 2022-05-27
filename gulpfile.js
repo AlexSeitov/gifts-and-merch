@@ -10,12 +10,10 @@ import autoprefixer from 'gulp-autoprefixer';
 import cleanCSS from 'gulp-clean-css';
 import sourcemaps from 'gulp-sourcemaps';
 import webp from 'gulp-webp';
-import imagemin from 'gulp-imagemin';
-import imageminWebp from 'imagemin-webp';
-import imageminOptipng from 'imagemin-optipng';
+import imagemin, { mozjpeg, optipng } from 'gulp-imagemin';
 import imageminGifsicle from 'imagemin-gifsicle';
-import newer from 'gulp-newer';
 import svgmin from 'gulp-svgmin';
+import newer from 'gulp-newer';
 import rename from 'gulp-rename';
 import webpack from 'webpack-stream';
 import webpackConfig from './webpack.prod.js';
@@ -39,10 +37,10 @@ const path = {
     css: sourceFolder + 'styles/main.scss',
     js: sourceFolder + 'scripts/index.js',
     gifs: sourceFolder + 'images/**/*.gif',
-    imagesToWebp: sourceFolder + 'images/**/*.{jpg,jpeg,png}',
+    imagesToWebp: sourceFolder + 'images/**/*.{jpg,jpeg}',
     imagesPng: sourceFolder + 'images/**/*.png',
-    favicon: sourceFolder + 'images/favicon.ico',
     svg: sourceFolder + 'images/**/*.svg',
+    favicon: sourceFolder + 'images/favicon.ico',
     fonts: sourceFolder + 'fonts',
     woffFonts: sourceFolder + 'fonts/*.woff2',
     video: sourceFolder + 'video/*'
@@ -58,7 +56,7 @@ const path = {
     html: sourceFolder + '**/*.html',
     css: sourceFolder + 'styles/**/*.scss',
     js: sourceFolder + 'scripts/**/*.js',
-    images: sourceFolder + 'images/**/*.{webp,png,gif,ico}',
+    images: sourceFolder + 'images/**/*.{jpg,jpeg,webp,png,gif,ico}',
     video: sourceFolder + 'video/*'
   },
   cleanFolder: buildFolder,
@@ -121,11 +119,8 @@ export const imagesToWebp = () => {
   return gulp
     .src(path.src.imagesToWebp)
     .pipe(newer(path.build.images))
-    .pipe(
-      imagemin({
-        plugins: [imageminWebp({ quality: 70 })]
-      })
-    )
+    .pipe(imagemin([mozjpeg({ quality: 75, progressive: true })]))
+    .pipe(webp())
     .pipe(gulp.dest(path.build.images));
 };
 
@@ -133,9 +128,15 @@ export const imagesPng = () => {
   return gulp
     .src(path.src.imagesPng)
     .pipe(newer(path.build.images))
-    .pipe(
-      imagemin([imageminOptipng({ optimizationLevel: 5 })])
-    )
+    .pipe(imagemin([optipng({ optimizationLevel: 5 })]))
+    .pipe(gulp.dest(path.build.images));
+};
+
+export const svg = () => {
+  return gulp
+    .src(path.src.svg)
+    .pipe(newer(path.build.images))
+    .pipe(svgmin())
     .pipe(gulp.dest(path.build.images));
 };
 
@@ -143,13 +144,6 @@ export const favicon = () => {
   return gulp
     .src(path.src.favicon)
     .pipe(rename('favicon.ico'))
-    .pipe(gulp.dest(path.build.images));
-};
-
-export const svg = () => {
-  return gulp
-    .src(path.src.svg)
-    .pipe(svgmin())
     .pipe(gulp.dest(path.build.images));
 };
 
