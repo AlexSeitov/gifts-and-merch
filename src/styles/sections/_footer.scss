@@ -1,5 +1,10 @@
 .footer {
+  padding-top: rem(70);
   padding-bottom: rem(30);
+
+  @media (min-width: $lg) {
+    padding: rem(120) 0 0;
+  }
 
   // .footer__row
 

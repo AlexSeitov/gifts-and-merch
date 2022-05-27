@@ -22,6 +22,10 @@
     "not dead",
     "not ie 11"
   ],
+  "browser": {
+    "fs": false,
+    "path": false
+  },
   "keywords": [],
   "author": "Alexander Seitov",
   "license": "ISC",
@@ -39,7 +43,9 @@
     "gulp-autoprefixer": "^8.0.0",
     "gulp-babel": "^8.0.0",
     "gulp-beautify": "^3.0.0",
+    "gulp-cheerio": "^1.0.0",
     "gulp-clean-css": "^4.3.0",
+    "gulp-favicons": "^3.0.0",
     "gulp-file-include": "^2.3.0",
     "gulp-group-css-media-queries": "^1.2.2",
     "gulp-html-beautify": "^1.0.1",

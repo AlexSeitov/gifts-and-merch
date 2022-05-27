@@ -20,6 +20,7 @@
     "no-tabs": ["error", { "allowIndentationTabs": true }],
     "comma-dangle": ["error", "never"],
     "array-bracket-spacing": ["error", "never"],
-    "eqeqeq": "off"
+    "eqeqeq": "off",
+    "radix": ["error", "as-needed"]
   }
 }

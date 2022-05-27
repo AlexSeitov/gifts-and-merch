@@ -13,6 +13,7 @@ import webp from 'gulp-webp';
 import imagemin, { mozjpeg, optipng } from 'gulp-imagemin';
 import imageminGifsicle from 'imagemin-gifsicle';
 import svgmin from 'gulp-svgmin';
+import gulpFavicons from 'gulp-favicons';
 import newer from 'gulp-newer';
 import rename from 'gulp-rename';
 import webpack from 'webpack-stream';
@@ -40,25 +41,23 @@ const path = {
     imagesToWebp: sourceFolder + 'images/**/*.{jpg,jpeg}',
     imagesPng: sourceFolder + 'images/**/*.png',
     svg: sourceFolder + 'images/**/*.svg',
-    favicons: sourceFolder + 'favicons/*',
-    fonts: sourceFolder + 'fonts',
+    favicon: sourceFolder + 'images/favicon.svg',
+    fonts: sourceFolder + 'fonts/*',
     woffFonts: sourceFolder + 'fonts/*.woff2',
     video: sourceFolder + 'video/*'
   },
   build: {
-    css: buildFolder + 'css',
-    js: buildFolder + 'js',
-    images: buildFolder + 'images',
-    favicons: buildFolder + 'favicons',
-    fonts: buildFolder + 'fonts',
-    video: buildFolder + 'video'
+    css: buildFolder + 'assets/css',
+    js: buildFolder + 'assets/js',
+    images: buildFolder + 'assets/images',
+    favicons: buildFolder + 'assets/favicons',
+    fonts: buildFolder + 'assets/fonts',
+    video: buildFolder + 'assets/video'
   },
   watch: {
     html: sourceFolder + '**/*.html',
     css: sourceFolder + 'styles/**/*.scss',
-    js: sourceFolder + 'scripts/**/*.js',
-    images: sourceFolder + 'images/**/*.{jpg,jpeg,webp,png,gif,ico}',
-    video: sourceFolder + 'video/*'
+    js: sourceFolder + 'scripts/**/*.js'
   },
   cleanFolder: buildFolder,
   cleanMap: buildFolder + '**/*.map'
@@ -142,10 +141,28 @@ export const svg = () => {
 };
 
 export const favicons = () => {
-  return gulp
-    .src(path.src.favicons)
-    .pipe(newer(path.build.images))
-    .pipe(gulp.dest(path.build.favicons));
+  return (
+    gulp
+      .src(path.src.favicon)
+      .pipe(newer(path.build.images))
+      .pipe(gulp.dest(path.build.favicons))
+      .pipe(
+        gulpFavicons({
+          path: path.src.favicons,
+          icons: {
+            android: true,
+            appleIcon: true,
+            appleStartup: false,
+            favicons: true,
+            windows: true,
+            yandex: false,
+            coast: false,
+            firefox: false
+          }
+        })
+      )
+      .pipe(gulp.dest(path.build.favicons))
+  );
 };
 
 export const ttfToWoff = () => {
