@@ -40,7 +40,7 @@ const path = {
     imagesToWebp: sourceFolder + 'images/**/*.{jpg,jpeg}',
     imagesPng: sourceFolder + 'images/**/*.png',
     svg: sourceFolder + 'images/**/*.svg',
-    favicon: sourceFolder + 'images/favicon.ico',
+    favicons: sourceFolder + 'favicons/*',
     fonts: sourceFolder + 'fonts',
     woffFonts: sourceFolder + 'fonts/*.woff2',
     video: sourceFolder + 'video/*'
@@ -49,6 +49,7 @@ const path = {
     css: buildFolder + 'css',
     js: buildFolder + 'js',
     images: buildFolder + 'images',
+    favicons: buildFolder + 'favicons',
     fonts: buildFolder + 'fonts',
     video: buildFolder + 'video'
   },
@@ -140,11 +141,11 @@ export const svg = () => {
     .pipe(gulp.dest(path.build.images));
 };
 
-export const favicon = () => {
+export const favicons = () => {
   return gulp
-    .src(path.src.favicon)
-    .pipe(rename('favicon.ico'))
-    .pipe(gulp.dest(path.build.images));
+    .src(path.src.favicons)
+    // .pipe(rename('favicon.ico'))
+    .pipe(gulp.dest(path.build.favicons));
 };
 
 export const ttfToWoff = () => {
@@ -197,7 +198,7 @@ export const build = gulp.series(
     html,
     styles,
     scripts,
-    favicon,
+    favicons,
     gifs,
     imagesToWebp,
     imagesPng,
@@ -214,7 +215,7 @@ const dev = gulp.series(
     html,
     styles,
     scripts,
-    favicon,
+    favicons,
     gifs,
     imagesToWebp,
     imagesPng,
