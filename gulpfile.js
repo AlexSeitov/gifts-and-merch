@@ -144,7 +144,7 @@ export const svg = () => {
 export const favicons = () => {
   return gulp
     .src(path.src.favicons)
-    // .pipe(rename('favicon.ico'))
+    .pipe(newer(path.build.images))
     .pipe(gulp.dest(path.build.favicons));
 };
 
