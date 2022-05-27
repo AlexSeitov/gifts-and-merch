@@ -11,10 +11,10 @@
   // .production__img-col
 
   &__img-wrapper {
+    width: 100%;
     margin-bottom: rem(34);
     overflow: hidden;
     border-radius: $radius;
-    width: 100%;
 
     img {
       height: 100%;
