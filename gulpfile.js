@@ -32,7 +32,7 @@ const isDev = !isBuild;
 const sourceFolder = 'src/';
 const buildFolder = 'dist/';
 
-const path = {
+const paths = {
   src: {
     html: sourceFolder + 'html/*.html',
     css: sourceFolder + 'styles/main.scss',
@@ -47,12 +47,12 @@ const path = {
     video: sourceFolder + 'video/*'
   },
   build: {
-    css: buildFolder + 'assets/css',
-    js: buildFolder + 'assets/js',
-    images: buildFolder + 'assets/images',
-    favicons: buildFolder + 'assets/favicons',
-    fonts: buildFolder + 'assets/fonts',
-    video: buildFolder + 'assets/video'
+    css: buildFolder + 'css',
+    js: buildFolder + 'js',
+    images: buildFolder + 'images',
+    favicons: buildFolder + 'favicons',
+    fonts: buildFolder + 'fonts',
+    video: buildFolder + 'video'
   },
   watch: {
     html: sourceFolder + '**/*.html',
@@ -65,7 +65,7 @@ const path = {
 
 export const html = () => {
   return gulp
-    .src(path.src.html)
+    .src(paths.src.html)
     .pipe(fileinclude({ prefix: '@@' }))
     .pipe(replace(/\.jpg/g, '.webp'))
     .pipe(htmlbeautify({ indent_size: 2 }))
@@ -82,7 +82,7 @@ export const html = () => {
 
 export const styles = () => {
   return gulp
-    .src(path.src.css)
+    .src(paths.src.css)
     .pipe(gulpif(isDev, sourcemaps.init()))
     .pipe(sass().on('error', sass.logError))
     .pipe(gcmq())
@@ -91,97 +91,95 @@ export const styles = () => {
     .pipe(gulpif(isBuild, cleanCSS()))
     .pipe(rename('style.min.css'))
     .pipe(gulpif(isDev, sourcemaps.write('.')))
-    .pipe(gulp.dest(path.build.css))
+    .pipe(gulp.dest(paths.build.css))
     .pipe(browserSync.stream());
 };
 
 export const scripts = () => {
   return gulp
-    .src(path.src.js)
+    .src(paths.src.js)
     .pipe(webpack(webpackConfig))
-    .pipe(gulp.dest(path.build.js))
+    .pipe(gulp.dest(paths.build.js))
     .pipe(browserSync.stream());
 };
 
 export const gifs = () => {
   return gulp
-    .src(path.src.gifs)
-    .pipe(newer(path.build.images))
+    .src(paths.src.gifs)
+    .pipe(newer(paths.build.images))
     .pipe(
       imagemin([imageminGifsicle({ optimizationLevel: 2 })], {
         verbose: true
       })
     )
-    .pipe(gulp.dest(path.build.images));
+    .pipe(gulp.dest(paths.build.images));
 };
 
 export const imagesToWebp = () => {
   return gulp
-    .src(path.src.imagesToWebp)
-    .pipe(newer(path.build.images))
+    .src(paths.src.imagesToWebp)
+    .pipe(newer(paths.build.images))
     .pipe(imagemin([mozjpeg({ quality: 75, progressive: true })]))
     .pipe(webp())
-    .pipe(gulp.dest(path.build.images));
+    .pipe(gulp.dest(paths.build.images));
 };
 
 export const imagesPng = () => {
   return gulp
-    .src(path.src.imagesPng)
-    .pipe(newer(path.build.images))
+    .src(paths.src.imagesPng)
+    .pipe(newer(paths.build.images))
     .pipe(imagemin([optipng({ optimizationLevel: 5 })]))
-    .pipe(gulp.dest(path.build.images));
+    .pipe(gulp.dest(paths.build.images));
 };
 
 export const svg = () => {
   return gulp
-    .src(path.src.svg)
-    .pipe(newer(path.build.images))
+    .src(paths.src.svg)
+    .pipe(newer(paths.build.images))
     .pipe(svgmin())
-    .pipe(gulp.dest(path.build.images));
+    .pipe(gulp.dest(paths.build.images));
 };
 
 export const favicons = () => {
-  return (
-    gulp
-      .src(path.src.favicon)
-      .pipe(newer(path.build.images))
-      .pipe(gulp.dest(path.build.favicons))
-      .pipe(
-        gulpFavicons({
-          path: path.src.favicons,
-          icons: {
-            android: true,
-            appleIcon: true,
-            appleStartup: false,
-            favicons: true,
-            windows: true,
-            yandex: false,
-            coast: false,
-            firefox: false
-          }
-        })
-      )
-      .pipe(gulp.dest(path.build.favicons))
-  );
+  return gulp
+    .src(paths.src.favicon)
+    .pipe(newer(paths.build.images))
+    .pipe(gulp.dest(paths.build.favicons))
+    .pipe(
+      gulpFavicons({
+        path: paths.src.favicons,
+        icons: {
+          android: true,
+          appleIcon: true,
+          appleStartup: false,
+          favicons: true,
+          windows: true,
+          yandex: false,
+          coast: false,
+          firefox: false
+        }
+      })
+    )
+    .pipe(gulp.dest(paths.build.favicons));
 };
 
 export const ttfToWoff = () => {
   return gulp
-    .src(`${path.src.fonts}/*.ttf`)
+    .src(`${paths.src.fonts}/*.ttf`)
     .pipe(ttf2woff2())
-    .pipe(gulp.dest(path.src.fonts));
+    .pipe(gulp.dest(paths.src.fonts));
 };
 
 export const ttfRemove = () => {
-  return del(`${path.src.fonts}/*.ttf`);
+  return del(`${paths.src.fonts}/*.ttf`);
 };
 
 export const fonts = () => {
-  return gulp.src(path.src.woffFonts).pipe(gulp.dest(path.build.fonts));
+  return gulp.src(paths.src.woffFonts).pipe(gulp.dest(paths.build.fonts));
 };
 
 export const video = () => {
-  return gulp.src(path.src.video).pipe(gulp.dest(path.build.video));
+  return gulp.src(paths.src.video).pipe(gulp.dest(paths.build.video));
 };
 
 export const watchFiles = () => {
@@ -194,17 +192,17 @@ export const watchFiles = () => {
     open: true
   });
 
-  gulp.watch([path.watch.html], html);
-  gulp.watch([path.watch.css], styles);
-  gulp.watch([path.watch.js], scripts);
+  gulp.watch([paths.watch.html], html);
+  gulp.watch([paths.watch.css], styles);
+  gulp.watch([paths.watch.js], scripts);
 };
 
 export const removeDist = () => {
-  return del(path.cleanFolder);
+  return del(paths.cleanFolder);
 };
 
 export const removeMap = () => {
-  return del(path.cleanMap);
+  return del(paths.cleanMap);
 };
 
 export const toWoff2 = gulp.series(ttfToWoff, ttfRemove);

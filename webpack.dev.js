@@ -7,8 +7,7 @@ export default {
   mode: 'development',
   entry: ['./src/scripts/index.js', './src/styles/main.scss'],
   output: {
-    filename: 'js/bundle.min.js',
-    path: path.resolve('dist')
+    filename: 'js/bundle.min.js'
   },
   devServer: {
     static: path.resolve('src'),

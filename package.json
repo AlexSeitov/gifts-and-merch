@@ -22,10 +22,6 @@
     "not dead",
     "not ie 11"
   ],
-  "browser": {
-    "fs": false,
-    "path": false
-  },
   "keywords": [],
   "author": "Alexander Seitov",
   "license": "ISC",
@@ -39,11 +35,11 @@
     "eslint": "^8.7.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "file-include-webpack-plugin": "^1.3.9",
+    "file-loader": "^6.2.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
     "gulp-babel": "^8.0.0",
     "gulp-beautify": "^3.0.0",
-    "gulp-cheerio": "^1.0.0",
     "gulp-clean-css": "^4.3.0",
     "gulp-favicons": "^3.0.0",
     "gulp-file-include": "^2.3.0",
