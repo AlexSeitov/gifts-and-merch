@@ -1,3 +1,6 @@
+@use '../base/functions' as *;
+@use '../base/variables' as *;
+
 .creative {
   padding-bottom: rem(120);
   overflow: hidden;
@@ -14,12 +17,13 @@
 
   &__title-img {
     max-width: rem(156);
+    margin: 0 auto;
     margin-bottom: rem(30);
-    margin-inline: auto;
 
     @media (min-width: $sm) {
       max-width: rem(302);
-      margin-inline: 0;
+      margin-right: 0;
+      margin-left: 0;
     }
   }
 
@@ -51,24 +55,13 @@
   // .creative__btns-wrapper
 
   &__btns-wrapper {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, rem(280));
     gap: rem(28);
-    align-items: center;
-
-    @media (min-width: $sm) {
-      flex-direction: row;
-      align-items: start;
-      justify-content: center;
-    }
+    justify-content: center;
 
     @media (min-width: $md) {
       justify-content: start;
-    }
-
-    .btn {
-      width: 100%;
-      max-width: rem(280);
     }
   }
 
@@ -78,10 +71,10 @@
     position: relative;
     bottom: rem(-70);
     max-width: rem(300);
+    margin: 0 auto;
     padding: rem(10);
     border-radius: $radius;
     transform: rotate(15deg);
-    margin-inline: auto;
 
     &::before {
       position: absolute;

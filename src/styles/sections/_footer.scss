@@ -1,9 +1,16 @@
+@use '../base/functions' as *;
+@use '../base/variables' as *;
+
 .footer {
-  padding-top: rem(70);
+  padding-top: rem(55);
   padding-bottom: rem(30);
 
   @media (min-width: $lg) {
-    padding-top: rem(120);
+    padding-top: rem(105);
+  }
+
+  &__item {
+    padding: 0 rem(15);
   }
 
   // .footer__row
@@ -11,9 +18,9 @@
   &__row {
     display: flex;
     flex-wrap: wrap;
-    gap: rem(30);
     justify-content: space-between;
-    margin-bottom: rem(50);
+    margin: 0 rem(-15);
+    margin-bottom: rem(20);
   }
 
   // .footer__logo
@@ -21,17 +28,13 @@
   &__logo {
     font-size: 0;
 
-    svg {
-      fill: $black;
-    }
-
     @media (min-width: $lg) {
       max-width: rem(350);
     }
 
     a {
       display: inline-block;
-      margin-bottom: rem(20);
+      margin-bottom: rem(40);
     }
   }
 
@@ -42,6 +45,8 @@
   // .footer__nav
 
   &__nav {
+    margin-bottom: rem(30);
+
     .nav__list {
       text-decoration: underline;
     }

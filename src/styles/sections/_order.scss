@@ -1,3 +1,6 @@
+@use '../base/functions' as *;
+@use '../base/variables' as *;
+
 .order {
   position: relative;
   color: $white;
@@ -36,8 +39,8 @@
 
   &__img-wrapper {
     max-width: rem(240);
+    margin: 0 auto;
     margin-bottom: rem(50);
-    margin-inline: auto;
 
     @media (min-width: $sm) {
       position: absolute;
@@ -71,7 +74,6 @@
   &__form-col {
     @media (min-width: $md) {
       display: flex;
-      column-gap: rem(40);
     }
 
     @media (min-width: $lg) {
@@ -90,6 +92,10 @@
 
     span {
       color: $secondaryColor;
+    }
+
+    @media (min-width: $md) {
+      margin-right: rem(40);
     }
   }
 
@@ -126,7 +132,6 @@
     display: flex;
     width: 100%;
     max-width: initial;
-    column-gap: rem(50);
   }
 
   // .form-order__input
@@ -143,6 +148,10 @@
 
     &::placeholder {
       color: $white;
+    }
+
+    @media (min-width: $lg) {
+      margin-right: rem(50);
     }
   }
 

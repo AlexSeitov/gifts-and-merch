@@ -1,3 +1,6 @@
+@use '../base/functions' as *;
+@use '../base/variables' as *;
+
 .btn {
   display: inline-block;
   padding: rem(20) rem(60);
@@ -9,7 +12,8 @@
   border: none;
   border-radius: rem(50);
   cursor: pointer;
-  transition: all $transition;
+  transition-duration: $transition;
+  transition-property: background-color;
 
   &-primary {
     background-color: $btnPrimaryColor;

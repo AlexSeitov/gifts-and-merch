@@ -1,8 +1,12 @@
+@use '../base/functions' as *;
+@use '../base/variables' as *;
+
 .burger {
   position: relative;
   z-index: 101;
   width: rem(30);
   height: rem(26);
+  margin-right: rem(15);
   padding-top: rem(1);
   border-radius: rem(5);
   outline: none;
@@ -33,7 +37,8 @@
   height: rem(2);
   background-color: $white;
   transform: rotate(0deg);
-  transition: all $transition;
+  transition-duration: $transition;
+  transition-property: background-color, width, transform;
 }
 
 .burger__btn span:nth-child(1) {

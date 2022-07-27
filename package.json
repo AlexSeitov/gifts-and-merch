@@ -16,8 +16,7 @@
     "prettier:fix": "prettier --write './**/*.(scss|js)'",
     "eslint": "eslint './**/*.js'",
     "eslint:fix": "eslint --fix './**/*.js'",
-    "prepare": "npx husky-init && husky install",
-    "sass-migrate": "sass-migrator module --verbose --migrate-deps src/styles/main.scss"
+    "prepare": "npx husky-init && husky install"
   },
   "browserslist": [
     "last 3 versions",
@@ -64,7 +63,7 @@
     "gulp-webp": "^4.0.1",
     "html-webpack-plugin": "^5.5.0",
     "htmlhint": "^1.1.0",
-    "husky": "^7.0.0",
+    "husky": "^8.0.0",
     "imagemin-gifsicle": "^7.0.0",
     "mini-css-extract-plugin": "^2.5.3",
     "node-sass": "^7.0.1",

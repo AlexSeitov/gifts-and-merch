@@ -1,3 +1,6 @@
+@use '../base/functions' as *;
+@use '../base/variables' as *;
+
 /* stylelint-disable no-duplicate-selectors */
 [data-a11y-dialog-native] .dialog__overlay {
   display: none;
@@ -33,12 +36,12 @@
     margin-bottom: rem(20);
     padding-bottom: rem(4);
     font-size: rem(22);
-    column-gap: rem(30);
     border-bottom: rem(1) solid $lightGray;
   }
 
   &__heading-item {
     position: relative;
+    margin-right: rem(30);
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -100,7 +103,7 @@
       width: 80%;
       height: rem(2);
       background-color: $primaryColor;
-      transition: all $transition;
+      transition: background-color $transition;
       content: '';
     }
 
@@ -130,7 +133,8 @@
   }
 
   &__social-wrapper {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, rem(40));
     column-gap: rem(15);
   }
 }

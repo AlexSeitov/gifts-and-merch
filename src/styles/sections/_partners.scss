@@ -1,3 +1,6 @@
+@use '../base/functions' as *;
+@use '../base/variables' as *;
+
 .partners {
   margin-top: rem(-30);
 
@@ -21,8 +24,9 @@
   &__row {
     display: flex;
     flex-wrap: wrap;
-    gap: rem(30);
     justify-content: center;
+    margin-right: rem(-15);
+    margin-left: rem(-15);
 
     @media (min-width: $lg) {
       justify-content: space-between;
@@ -36,6 +40,9 @@
     align-items: center;
     width: rem(120);
     height: rem(64);
+    margin-bottom: rem(15);
+    padding-right: rem(15);
+    padding-left: rem(15);
 
     @media (min-width: $md) {
       width: rem(140);

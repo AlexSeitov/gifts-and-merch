@@ -36,10 +36,6 @@ export default {
       {
         test: /\.(jpg|jpeg|png|gif)$/i,
         type: 'asset/resource'
-      },
-      {
-        test: /\.woff2$/,
-        type: 'asset/resource'
       }
     ]
   },
@@ -54,7 +50,7 @@ export default {
 
     new MiniCssExtractPlugin({
       linkType: 'text/css',
-      filename: 'css/style.min.css'
+      filename: 'css/main.styles.css'
     })
   ]
 };

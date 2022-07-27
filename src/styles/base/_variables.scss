@@ -1,9 +1,13 @@
+@use 'functions' as *;
+
 // Fonts, text
 $fontFamily: 'Nunito Sans', sans-serif;
 $secondaryFontFamily: 'Ubuntu', sans-serif;
 $fontSize: rem(16);
 $fontWeight: 400;
 $lineHeight: 1.4;
+
+@use 'sass:color';
 
 // Colors
 $primaryColor: #4b83b4;

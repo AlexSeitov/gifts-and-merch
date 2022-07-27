@@ -1,8 +1,7 @@
-.nav {
-  &__link {
-    transition: all $transition;
-  }
+@use '../base/functions' as *;
+@use '../base/variables' as *;
 
+.nav {
   &__btn-call {
     margin-top: rem(60);
 

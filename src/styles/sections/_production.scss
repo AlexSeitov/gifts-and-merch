@@ -1,32 +1,24 @@
+@use '../base/functions' as *;
+@use '../base/variables' as *;
+
 .production {
   // .production__row
 
   &__row {
-    @media (min-width: $md) {
-      display: flex;
-      column-gap: rem(30);
-    }
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(rem(290), 1fr));
+    gap: rem(30);
   }
 
   // .production__img-col
 
   &__img-wrapper {
-    width: 100%;
-    margin-bottom: rem(34);
     overflow: hidden;
     border-radius: $radius;
 
     img {
       height: 100%;
       object-fit: cover;
-    }
-  }
-
-  // .production__content-col
-
-  &__content-col {
-    @media (min-width: $md) {
-      max-width: 50%;
     }
   }
 
