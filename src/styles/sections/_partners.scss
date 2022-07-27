@@ -1,18 +1,21 @@
-.partners {
-  margin-top: rem(-30);
+@use "../base/functions";
+@use "../base/variables";
 
-  @media (min-width: $sm) {
+.partners {
+  margin-top: functions.rem(-30);
+
+  @media (min-width: variables.$sm) {
     position: relative;
     z-index: 3;
-    margin-top: rem(-90);
+    margin-top: functions.rem(-90);
   }
 
-  @media (min-width: $lg) {
-    margin-top: rem(-130);
+  @media (min-width: variables.$lg) {
+    margin-top: functions.rem(-130);
   }
 
   &__title {
-    margin-bottom: rem(50);
+    margin-bottom: functions.rem(50);
     text-align: center;
   }
 
@@ -21,10 +24,10 @@
   &__row {
     display: flex;
     flex-wrap: wrap;
-    gap: rem(30);
+    gap: functions.rem(30);
     justify-content: center;
 
-    @media (min-width: $lg) {
+    @media (min-width: variables.$lg) {
       justify-content: space-between;
     }
   }
@@ -34,17 +37,17 @@
   &__item {
     display: flex;
     align-items: center;
-    width: rem(120);
-    height: rem(64);
+    width: functions.rem(120);
+    height: functions.rem(64);
 
-    @media (min-width: $md) {
-      width: rem(140);
-      height: rem(54);
+    @media (min-width: variables.$md) {
+      width: functions.rem(140);
+      height: functions.rem(54);
     }
 
-    @media (min-width: $md) {
-      width: rem(160);
-      height: rem(74);
+    @media (min-width: variables.$md) {
+      width: functions.rem(160);
+      height: functions.rem(74);
     }
 
     img {

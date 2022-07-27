@@ -1,3 +1,6 @@
+@use "../base/functions";
+@use "../base/variables";
+
 // .swiper {
 //   overflow: hidden;
 // }
@@ -17,27 +20,27 @@
 .swiper-btns {
   display: flex;
   justify-content: center;
-  margin-top: rem(30);
+  margin-top: functions.rem(30);
 }
 
 .swiper-button-next,
 .swiper-button-prev {
-  width: rem(16);
-  height: rem(16);
+  width: functions.rem(16);
+  height: functions.rem(16);
   cursor: pointer;
 
   &::after {
     display: inline-block;
-    padding: rem(6);
-    border: solid $black;
-    border-width: 0 rem(2) rem(2) 0;
-    transition: transform $transition;
+    padding: functions.rem(6);
+    border: solid variables.$black;
+    border-width: 0 functions.rem(2) functions.rem(2) 0;
+    transition: transform variables.$transition;
     content: '';
   }
 }
 
 .swiper-button-prev {
-  margin-right: rem(18);
+  margin-right: functions.rem(18);
 
   &::after {
     transform: rotate(135deg);
@@ -51,7 +54,7 @@
 }
 
 .swiper-button-next {
-  margin-left: rem(18);
+  margin-left: functions.rem(18);
 
   &::after {
     transform: rotate(-45deg);
@@ -70,12 +73,12 @@
 
 .swiper-pagination-bullet {
   display: inline-block;
-  width: rem(15);
-  height: rem(15);
-  border: rem(2) solid $black;
+  width: functions.rem(15);
+  height: functions.rem(15);
+  border: functions.rem(2) solid variables.$black;
   border-radius: 50%;
   cursor: pointer;
-  transition: transform $transition;
+  transition: transform variables.$transition;
 
   @media (hover: hover) {
     &:hover {
@@ -84,7 +87,7 @@
   }
 
   &:not(:last-child) {
-    margin-right: rem(15);
+    margin-right: functions.rem(15);
   }
 }
 

@@ -1,37 +1,40 @@
+@use "../base/functions";
+@use "../base/variables";
+
 .btn {
   display: inline-block;
-  padding: rem(20) rem(60);
-  color: $white;
-  font-size: rem(16);
-  line-height: lh(18.4);
+  padding: functions.rem(20) functions.rem(60);
+  color: variables.$white;
+  font-size: functions.rem(16);
+  line-height: functions.lh(18.4);
   white-space: nowrap;
   text-align: center;
   border: none;
-  border-radius: rem(50);
+  border-radius: functions.rem(50);
   cursor: pointer;
-  transition: all $transition;
+  transition: all variables.$transition;
 
   &-primary {
-    background-color: $btnPrimaryColor;
+    background-color: variables.$btnPrimaryColor;
 
     @media (hover: hover) {
       &:hover {
-        background-color: $btnPrimaryColorHover;
+        background-color: variables.$btnPrimaryColorHover;
       }
     }
   }
 
   &-secondary {
-    background-color: $btnSecondaryColor;
+    background-color: variables.$btnSecondaryColor;
 
     @media (hover: hover) {
       &:hover {
-        background-color: $btnSecondaryColorHover;
+        background-color: variables.$btnSecondaryColorHover;
       }
     }
   }
 
   &-tertiary {
-    background-color: $black;
+    background-color: variables.$black;
   }
 }

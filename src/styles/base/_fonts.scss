@@ -1,5 +1,7 @@
-@include font-face('Ubuntu', '../fonts/Ubuntu-Bold', 700, normal);
-@include font-face('Nunito Sans', '../fonts/NunitoSans-Regular', 400, normal);
+@use "../mixins/font-face";
+
+@include font-face.font-face('Ubuntu', '../fonts/Ubuntu-Bold', 700, normal);
+@include font-face.font-face('Nunito Sans', '../fonts/NunitoSans-Regular', 400, normal);
 
 // font-family: 'Nunito Sans', sans-serif;
 // font-family: 'Ubuntu', sans-serif;

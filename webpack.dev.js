@@ -54,7 +54,7 @@ export default {
 
     new MiniCssExtractPlugin({
       linkType: 'text/css',
-      filename: 'css/style.min.css'
+      filename: 'css/main.styles.css'
     })
   ]
 };

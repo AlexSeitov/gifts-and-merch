@@ -1,9 +1,12 @@
+@use "../base/functions";
+@use "../base/variables";
+
 .creative {
-  padding-bottom: rem(120);
+  padding-bottom: functions.rem(120);
   overflow: hidden;
 
-  @media (min-width: $sm) {
-    padding-bottom: rem(10);
+  @media (min-width: variables.$sm) {
+    padding-bottom: functions.rem(10);
   }
 
   .container {
@@ -13,12 +16,12 @@
   // .creative__title-img
 
   &__title-img {
-    max-width: rem(156);
-    margin-bottom: rem(30);
+    max-width: functions.rem(156);
+    margin-bottom: functions.rem(30);
     margin-inline: auto;
 
-    @media (min-width: $sm) {
-      max-width: rem(302);
+    @media (min-width: variables.$sm) {
+      max-width: functions.rem(302);
       margin-inline: 0;
     }
   }
@@ -26,12 +29,12 @@
   // .creative__title
 
   &__title {
-    @media (min-width: $sm) {
+    @media (min-width: variables.$sm) {
       max-width: 70%;
       text-align: left;
     }
 
-    @media (min-width: $md) {
+    @media (min-width: variables.$md) {
       max-width: 60%;
     }
   }
@@ -39,12 +42,12 @@
   // .creative__text
 
   &__text {
-    max-width: rem(300);
-    margin-bottom: rem(60);
+    max-width: functions.rem(300);
+    margin-bottom: functions.rem(60);
 
-    @media (min-width: $md) {
-      max-width: rem(400);
-      margin-bottom: rem(100);
+    @media (min-width: variables.$md) {
+      max-width: functions.rem(400);
+      margin-bottom: functions.rem(100);
     }
   }
 
@@ -53,22 +56,22 @@
   &__btns-wrapper {
     display: flex;
     flex-direction: column;
-    gap: rem(28);
+    gap: functions.rem(28);
     align-items: center;
 
-    @media (min-width: $sm) {
+    @media (min-width: variables.$sm) {
       flex-direction: row;
       align-items: start;
       justify-content: center;
     }
 
-    @media (min-width: $md) {
+    @media (min-width: variables.$md) {
       justify-content: start;
     }
 
     .btn {
       width: 100%;
-      max-width: rem(280);
+      max-width: functions.rem(280);
     }
   }
 
@@ -76,44 +79,44 @@
 
   &__img-col {
     position: relative;
-    bottom: rem(-70);
-    max-width: rem(300);
-    padding: rem(10);
-    border-radius: $radius;
+    bottom: functions.rem(-70);
+    max-width: functions.rem(300);
+    padding: functions.rem(10);
+    border-radius: variables.$radius;
     transform: rotate(15deg);
     margin-inline: auto;
 
     &::before {
       position: absolute;
-      bottom: rem(10);
-      left: rem(-30);
+      bottom: functions.rem(10);
+      left: functions.rem(-30);
       z-index: -1;
       display: block;
-      width: rem(200);
-      height: rem(200);
-      background-color: $tertiaryColor;
-      border-radius: $radius;
+      width: functions.rem(200);
+      height: functions.rem(200);
+      background-color: variables.$tertiaryColor;
+      border-radius: variables.$radius;
       transform: rotate(-45deg);
       opacity: 0.4;
       content: '';
 
-      @media (min-width: $sm) {
+      @media (min-width: variables.$sm) {
         left: 0;
-        width: rem(150);
-        height: rem(150);
+        width: functions.rem(150);
+        height: functions.rem(150);
       }
 
-      @media (min-width: $md) {
-        left: rem(-30);
-        width: rem(200);
-        height: rem(200);
+      @media (min-width: variables.$md) {
+        left: functions.rem(-30);
+        width: functions.rem(200);
+        height: functions.rem(200);
       }
 
-      @media (min-width: $lg) {
-        bottom: rem(-30);
-        left: rem(-60);
-        width: rem(280);
-        height: rem(280);
+      @media (min-width: variables.$lg) {
+        bottom: functions.rem(-30);
+        left: functions.rem(-60);
+        width: functions.rem(280);
+        height: functions.rem(280);
       }
     }
 
@@ -121,33 +124,33 @@
       position: absolute;
       z-index: -1;
       display: block;
-      background-color: $primaryColor;
-      border-radius: $radius;
+      background-color: variables.$primaryColor;
+      border-radius: variables.$radius;
       content: '';
       inset: 0;
     }
 
-    @media (min-width: $sm) {
+    @media (min-width: variables.$sm) {
       position: absolute;
-      top: rem(10);
-      right: rem(-40);
+      top: functions.rem(10);
+      right: functions.rem(-40);
       bottom: initial;
-      max-width: rem(200);
+      max-width: functions.rem(200);
     }
 
-    @media (min-width: $md) {
+    @media (min-width: variables.$md) {
       right: initial;
       left: 70vw;
       width: 100%;
-      max-width: rem(270);
+      max-width: functions.rem(270);
     }
 
-    @media (min-width: $lg) {
-      max-width: rem(400);
+    @media (min-width: variables.$lg) {
+      max-width: functions.rem(400);
     }
 
-    @media (min-width: $xl) {
-      right: rem(54);
+    @media (min-width: variables.$xl) {
+      right: functions.rem(54);
       left: initial;
     }
   }

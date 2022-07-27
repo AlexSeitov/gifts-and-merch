@@ -1,9 +1,13 @@
+@use 'functions';
+
 // Fonts, text
 $fontFamily: 'Nunito Sans', sans-serif;
 $secondaryFontFamily: 'Ubuntu', sans-serif;
-$fontSize: rem(16);
+$fontSize: functions.rem(16);
 $fontWeight: 400;
 $lineHeight: 1.4;
+
+@use 'sass:color';
 
 // Colors
 $primaryColor: #4b83b4;
@@ -25,8 +29,8 @@ $btnSecondaryColor: #335c81;
 $btnSecondaryColorHover: color.adjust($btnSecondaryColor, $blackness: 15%);
 
 // Others
-$radius: rem(10);
-$shadow: 0 0 rem(12) 0 rgba(230, 235, 245, 50%);
+$radius: functions.rem(10);
+$shadow: 0 0 functions.rem(12) 0 rgba(230, 235, 245, 50%);
 $transition: 0.3s;
 
 // Sizes
@@ -39,8 +43,8 @@ $containerPadding: 30;
 $containerWidth: $maxWidthContainer + $containerPadding;
 
 // Breakpoints
-$sm: rem(568);
-$md: rem(768);
-$lg: rem(1024);
-$xl: rem(1366);
-$xxl: rem(1600);
+$sm: functions.rem(568);
+$md: functions.rem(768);
+$lg: functions.rem(1024);
+$xl: functions.rem(1366);
+$xxl: functions.rem(1600);

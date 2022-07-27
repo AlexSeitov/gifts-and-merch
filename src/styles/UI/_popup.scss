@@ -1,3 +1,6 @@
+@use "../base/functions";
+@use "../base/variables";
+
 /* stylelint-disable no-duplicate-selectors */
 [data-a11y-dialog-native] .dialog__overlay {
   display: none;
@@ -29,12 +32,12 @@
 
   &__heading {
     display: flex;
-    margin-top: rem(35);
-    margin-bottom: rem(20);
-    padding-bottom: rem(4);
-    font-size: rem(22);
-    column-gap: rem(30);
-    border-bottom: rem(1) solid $lightGray;
+    margin-top: functions.rem(35);
+    margin-bottom: functions.rem(20);
+    padding-bottom: functions.rem(4);
+    font-size: functions.rem(22);
+    column-gap: functions.rem(30);
+    border-bottom: functions.rem(1) solid variables.$lightGray;
   }
 
   &__heading-item {
@@ -42,22 +45,22 @@
     background-color: transparent;
     border: none;
     cursor: pointer;
-    transition: opacity $transition;
+    transition: opacity variables.$transition;
 
     &::after {
       position: absolute;
-      bottom: rem(-6);
+      bottom: functions.rem(-6);
       left: 0;
       width: 100%;
-      height: rem(2);
-      border-bottom: rem(3) solid $primaryColor;
+      height: functions.rem(2);
+      border-bottom: functions.rem(3) solid variables.$primaryColor;
       opacity: 0;
       content: '';
     }
 
     @media (hover: hover) {
       &:hover {
-        color: $blackGray;
+        color: variables.$blackGray;
       }
     }
   }
@@ -66,29 +69,29 @@
     position: relative;
     z-index: 20;
     width: 100%;
-    max-width: rem(400);
+    max-width: functions.rem(400);
     margin: auto;
-    padding: rem(25) rem(15);
-    background-color: $white;
-    border-radius: $radius;
+    padding: functions.rem(25) functions.rem(15);
+    background-color: variables.$white;
+    border-radius: variables.$radius;
     animation: fade-in 400ms 200ms both, slide-up 400ms 200ms both;
 
-    @media (min-width: $sm) {
-      padding: rem(40) rem(30);
+    @media (min-width: variables.$sm) {
+      padding: functions.rem(40) functions.rem(30);
     }
   }
 
   &__close {
     position: absolute;
-    top: rem(20);
-    right: rem(20);
+    top: functions.rem(20);
+    right: functions.rem(20);
     display: flex;
     align-items: center;
     justify-content: center;
-    width: rem(30);
-    height: rem(30);
+    width: functions.rem(30);
+    height: functions.rem(30);
     text-align: center;
-    background-color: $bgColor;
+    background-color: variables.$bgColor;
     border: none;
     outline: none;
     cursor: pointer;
@@ -98,9 +101,9 @@
       position: absolute;
       display: block;
       width: 80%;
-      height: rem(2);
-      background-color: $primaryColor;
-      transition: all $transition;
+      height: functions.rem(2);
+      background-color: variables.$primaryColor;
+      transition: all variables.$transition;
       content: '';
     }
 
@@ -115,7 +118,7 @@
     &:focus {
       &::after,
       &::before {
-        background-color: $black;
+        background-color: variables.$black;
       }
     }
 
@@ -123,7 +126,7 @@
       &:hover {
         &::after,
         &::before {
-          background-color: $black;
+          background-color: variables.$black;
         }
       }
     }
@@ -131,7 +134,7 @@
 
   &__social-wrapper {
     display: flex;
-    column-gap: rem(15);
+    column-gap: functions.rem(15);
   }
 }
 
@@ -149,12 +152,12 @@
 
 .dialog-form {
   &__group {
-    margin-bottom: rem(20);
+    margin-bottom: functions.rem(20);
   }
 
   &__label {
     display: block;
-    margin-bottom: rem(15);
+    margin-bottom: functions.rem(15);
     text-align: left;
   }
 
@@ -162,9 +165,9 @@
 
   &__input {
     width: 100%;
-    padding: rem(16);
-    border: 1px solid $inputBorderColor;
-    border-radius: $radius;
+    padding: functions.rem(16);
+    border: 1px solid variables.$inputBorderColor;
+    border-radius: variables.$radius;
     outline: none;
   }
 
@@ -172,20 +175,20 @@
 
   &__btn {
     width: 100%;
-    margin-top: rem(10);
+    margin-top: functions.rem(10);
   }
 }
 
 .forgot-password {
   display: block;
-  margin-top: rem(10);
-  color: $primaryColor;
+  margin-top: functions.rem(10);
+  color: variables.$primaryColor;
   text-align: right;
-  transition: color $transition;
+  transition: color variables.$transition;
 
   @media (hover: hover) {
     &:hover {
-      color: $black;
+      color: variables.$black;
     }
   }
 }

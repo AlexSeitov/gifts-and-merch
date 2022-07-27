@@ -1,26 +1,29 @@
+@use "../base/functions";
+@use "../base/variables";
+
 .nav {
   &__link {
-    transition: all $transition;
+    transition: all variables.$transition;
   }
 
   &__btn-call {
-    margin-top: rem(60);
+    margin-top: functions.rem(60);
 
-    @media (min-width: $lg) {
+    @media (min-width: variables.$lg) {
       display: none;
     }
 
     .btn {
       width: 100%;
-      font-size: rem(18);
+      font-size: functions.rem(18);
 
-      @media (min-width: $sm) {
+      @media (min-width: variables.$sm) {
         width: initial;
       }
     }
   }
 
   &_active {
-    color: $black;
+    color: variables.$black;
   }
 }

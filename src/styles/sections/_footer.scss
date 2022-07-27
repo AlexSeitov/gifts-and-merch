@@ -1,9 +1,12 @@
-.footer {
-  padding-top: rem(70);
-  padding-bottom: rem(30);
+@use "../base/functions";
+@use "../base/variables";
 
-  @media (min-width: $lg) {
-    padding-top: rem(120);
+.footer {
+  padding-top: functions.rem(70);
+  padding-bottom: functions.rem(30);
+
+  @media (min-width: variables.$lg) {
+    padding-top: functions.rem(120);
   }
 
   // .footer__row
@@ -11,9 +14,9 @@
   &__row {
     display: flex;
     flex-wrap: wrap;
-    gap: rem(30);
+    gap: functions.rem(30);
     justify-content: space-between;
-    margin-bottom: rem(50);
+    margin-bottom: functions.rem(50);
   }
 
   // .footer__logo
@@ -22,21 +25,21 @@
     font-size: 0;
 
     svg {
-      fill: $black;
+      fill: variables.$black;
     }
 
-    @media (min-width: $lg) {
-      max-width: rem(350);
+    @media (min-width: variables.$lg) {
+      max-width: functions.rem(350);
     }
 
     a {
       display: inline-block;
-      margin-bottom: rem(20);
+      margin-bottom: functions.rem(20);
     }
   }
 
   &__text {
-    max-width: rem(400);
+    max-width: functions.rem(400);
   }
 
   // .footer__nav
@@ -47,7 +50,7 @@
     }
 
     .nav__item {
-      margin-bottom: rem(15);
+      margin-bottom: functions.rem(15);
     }
 
     .nav__link {
@@ -58,15 +61,15 @@
       }
     }
 
-    @media (min-width: $sm) {
+    @media (min-width: variables.$sm) {
       width: 40%;
     }
 
-    @media (min-width: $md) {
+    @media (min-width: variables.$md) {
       width: 50%;
     }
 
-    @media (min-width: $lg) {
+    @media (min-width: variables.$lg) {
       width: initial;
     }
   }
@@ -74,15 +77,15 @@
   // .footer__contact
 
   &__contact {
-    @media (min-width: $sm) {
-      width: calc(60% - rem(30));
+    @media (min-width: variables.$sm) {
+      width: calc(60% - functions.rem(30));
     }
 
-    @media (min-width: $md) {
-      width: calc(50% - rem(30));
+    @media (min-width: variables.$md) {
+      width: calc(50% - functions.rem(30));
     }
 
-    @media (min-width: $lg) {
+    @media (min-width: variables.$lg) {
       width: initial;
     }
   }
@@ -90,32 +93,32 @@
   // .footer__contact-title
 
   &__contact-title {
-    margin-bottom: rem(15);
-    font-size: rem(20);
-    font-family: $secondaryFontFamily;
+    margin-bottom: functions.rem(15);
+    font-size: functions.rem(20);
+    font-family: variables.$secondaryFontFamily;
   }
 
   // .footer__contact-text
 
   &__contact-text {
-    max-width: rem(400);
-    margin-bottom: rem(30);
+    max-width: functions.rem(400);
+    margin-bottom: functions.rem(30);
   }
 
   // .footer__form
 
   &__form {
     position: relative;
-    max-width: rem(400);
+    max-width: functions.rem(400);
   }
 
   // .footer__form-input
 
   &__form-input {
     width: 100%;
-    padding: rem(16);
-    border: 1px solid $inputBorderColor;
-    border-radius: $radius;
+    padding: functions.rem(16);
+    border: 1px solid variables.$inputBorderColor;
+    border-radius: variables.$radius;
     outline: none;
   }
 
@@ -123,17 +126,17 @@
 
   &__form-btn {
     position: absolute;
-    top: rem(8);
-    right: rem(8);
-    width: rem(34);
-    height: rem(34);
-    color: $white;
-    background-color: $primaryColor;
+    top: functions.rem(8);
+    right: functions.rem(8);
+    width: functions.rem(34);
+    height: functions.rem(34);
+    color: variables.$white;
+    background-color: variables.$primaryColor;
     border: none;
     border-radius: 50%;
     outline: none;
     cursor: pointer;
-    transition: transform $transition;
+    transition: transform variables.$transition;
 
     @media (hover: hover) {
       &:hover {
@@ -142,14 +145,14 @@
     }
 
     svg {
-      stroke: $white;
+      stroke: variables.$white;
     }
   }
 
   // .footer__copyright
 
   &__copyright {
-    color: $gray;
+    color: variables.$gray;
     text-align: center;
   }
 }
